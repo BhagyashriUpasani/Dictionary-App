@@ -1,0 +1,215 @@
+/* Import Google Font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+
+section
+{
+    position: relative;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #161623;
+    overflow: hidden;
+}
+section::before
+{
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    /* background: linear-gradient(#ffc107,#f10915); */
+    /* background: linear-gradient(#8bff07,#f10943); */
+    background: linear-gradient(#9c07ff,#f10915);
+    border-radius: 50%;
+    transform: translate(-250px,-120px);
+    filter: blur(90px);
+    opacity: 0.9;
+}
+section::after
+{
+    content: '';
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    background: linear-gradient(#8bff07,#ffc107);
+    /* background: linear-gradient(#07d6ff,#ffc107); */
+    /* background: linear-gradient(#3a21f3,#13e6e6); */
+    border-radius: 50%;
+    transform: translate(250px,150px);
+    filter: brightness(.5);
+    filter: blur(90px);
+    opacity: 0.9;
+
+}
+.box
+{
+    position: relative;
+    z-index: 1000;
+}
+
+
+
+
+::selection{
+  /* color: #080808; */
+  background: rgba(255,255,255,0.1);
+}
+.wrapper{
+  /* background: rgba(255,255,255,0.2); */
+  background: rgba(92, 88, 88, 0.2);
+  box-shadow:0 25px 45px rgba(0,0,0,0.1);
+  border: 1px solid rgba(255,255,255,0.5);
+  border-right: 1px solid rgba(255,255,255,0.2);
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  backdrop-filter: blur(25px);
+
+  width: 420px;
+  border-radius: 7px;
+  padding: 25px 28px 45px;
+  box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.05);
+}
+.wrapper header{
+  font-size: 28px;
+  font-weight: 500;
+  text-align: center;
+  color: #FEFEFE;
+}
+.wrapper .search{
+  position: relative;
+  margin: 35px 0 18px;
+}
+.search input{
+  height: 53px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding: 0 42px;
+  border: 1px solid rgba(255,255,255,0.5);
+  color: #eee4e4;
+  background-color: transparent;
+
+}
+.search input:focus{
+  padding: 0 41px;
+  /* border: 2px solid #4D59FB;  comes border after go on input box */
+}
+
+.search input::placeholder{
+  color: #eee4e4;
+}
+.search :where(i, span){
+  position: absolute;
+  top: 50%;
+  color: #eee4e4;
+  transform: translateY(-50%);
+}
+.search i{
+  left: 18px;
+  pointer-events: none;
+  font-size: 16px;
+}
+/* .search input:focus ~ i{
+  color: #d2fb4d;
+} */
+.search span{
+  right: 15px;
+  cursor: pointer;
+  font-size: 18px;
+  display: none;
+}
+.search input:valid ~ span{
+  display: block;
+}
+.wrapper .info-text{
+  font-size: 13px;
+  color: #eee4e4;
+  margin: -3px 0 -10px;
+}
+.wrapper.active .info-text{
+  display: none;
+}
+.info-text span{
+  font-weight: 500;
+}
+.wrapper.active ul{
+  opacity: 1;
+  height: 303px;
+}
+.wrapper ul li{
+  display: flex;
+  list-style: none;
+  margin-bottom: 14px;
+  align-items: center;
+  padding-bottom: 17px;
+  border-bottom: 1px solid #bdb3b3;
+  justify-content: space-between;
+}
+.wrapper ul{
+  height: 0;
+  opacity: 0;
+  padding-right: 1px;
+  overflow-y: hidden;
+  transition: all 0.2s ease;
+} 
+ul li:last-child{
+  margin-bottom: 0;
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+ul .word p{
+  font-size: 22px;
+  font-weight: 500;
+  color: #eee4e4;
+
+}
+ul .word span{
+  font-size: 12px;
+  color: #eee4e4e1;
+
+}
+ul .word i{
+  color: #eee4e4;
+
+  font-size: 15px;
+  cursor: pointer;
+}
+ul .content{
+  max-height: 215px;
+  overflow-y: auto;
+}
+ul .content::-webkit-scrollbar{
+  width: 0px;
+}
+.content li .details{
+  padding-left: 10px;
+  border-radius: 4px 0 0 4px;
+  border-left: 3px solid #d2c8c8;
+}
+.content li p{
+  font-size: 17px;
+  font-weight: 500;
+  color: #eee4e4;
+}
+.content li span{
+  font-size: 15px;
+  color: #eee4e4;
+
+}
+.content .synonyms .list{
+  display: flex;
+  flex-wrap: wrap;
+}
+.content .synonyms span{
+  cursor: pointer;
+  margin-right: 5px;
+  text-decoration: underline;
+} 
